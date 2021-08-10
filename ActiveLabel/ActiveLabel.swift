@@ -63,7 +63,9 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
     public var highlightFontSize: CGFloat? = nil {
         didSet { updateTextStorage(parseText: false) }
     }
-    
+    open var customUnderLineStyle: [ActiveType : NSUnderlineStyle] = [:] {
+        didSet { updateTextStorage(parseText: false) }
+    }
     // MARK: - Computed Properties
     private var hightlightFont: UIFont? {
         guard let highlightFontName = highlightFontName, let highlightFontSize = highlightFontSize else { return nil }
@@ -331,7 +333,9 @@ typealias ElementTuple = (range: NSRange, element: ActiveElement, type: ActiveTy
             case .mention: attributes[NSAttributedString.Key.foregroundColor] = mentionColor
             case .hashtag: attributes[NSAttributedString.Key.foregroundColor] = hashtagColor
             case .url: attributes[NSAttributedString.Key.foregroundColor] = URLColor
-            case .custom: attributes[NSAttributedString.Key.foregroundColor] = customColor[type] ?? defaultCustomColor
+            case .custom:
+                attributes[NSAttributedString.Key.foregroundColor] = customColor[type] ?? defaultCustomColor
+                attributes[NSAttributedString.Key.underlineStyle] = customUnderLineStyle[type]?.rawValue ?? NSUnderlineStyle.single.rawValue
             case .email: attributes[NSAttributedString.Key.foregroundColor] = URLColor
             }
             

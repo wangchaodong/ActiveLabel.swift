@@ -49,7 +49,7 @@ class ViewController: UIViewController {
             label.customSelectedColor[customType] = UIColor.green
             label.customColor[customType2] = UIColor.magenta
             label.customSelectedColor[customType2] = UIColor.green
-            
+            label.customUnderLineStyle[customType2] = NSUnderlineStyle.single
             label.configureLinkAttribute = { (type, attributes, isSelected) in
                 var atts = attributes
                 switch type {
