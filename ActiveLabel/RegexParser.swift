@@ -28,8 +28,8 @@ struct RegexParser {
         if let regex = cachedRegularExpressions[pattern] {
             return regex
         } else if pattern.isEmpty {
-			return nil
-		} else if let createdRegex = try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive]) {
+	    return nil
+	} else if let createdRegex = try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive]) {
             cachedRegularExpressions[pattern] = createdRegex
             return createdRegex
         } else {
