@@ -2,11 +2,11 @@
 //  ActiveLabel.h
 //  ActiveLabel
 //
-//  Created by Johannes Schickling on 9/4/15.
-//  Copyright © 2015 Optonaut. All rights reserved.
+//  Created by s1mple wang on 2023/4/11.
+//  Copyright © 2023 Optonaut. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for ActiveLabel.
 FOUNDATION_EXPORT double ActiveLabelVersionNumber;
